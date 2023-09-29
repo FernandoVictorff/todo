@@ -1,0 +1,25 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /v1
+
+spring:
+  h2:
+    console.enabled: true
+  datasource:
+    url: jdbc:h2:mem:taskdb
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+  jpa:
+    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: none
+  api-docs:
+    path: /v3/api-docs
+    swagger-ui:
+      path: /swagger-ui.html
+      operationsSorter: method
+      disable-swagger-default-url: true
+      use-root-path: true
+    packagesToScan: br.com.fernando.test.todo.controller
